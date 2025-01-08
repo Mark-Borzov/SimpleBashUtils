@@ -8,3 +8,13 @@ clean:
 	
 s21_grep: clean
 	$(CC) $(CFLAGS) grep.c -o s21_grep
+
+test:
+	chmod +x test_grep.sh
+	./test_grep.sh
+
+clang-check:
+	clang-format -n grep.c
+
+clang-done:
+	clang-format -i grep.c
